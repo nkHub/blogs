@@ -1,10 +1,21 @@
-<header class="header">
-  <div class="container flex spb">
-    <h1>网页标题</h1>
-    <nav class="nav">
-      <% for (var link in site.data.menu) { %>
-      <a href="<%= site.data.menu[link] %>"> <%= link %> </a>
-      <% } %>
-    </nav>
+<nav class="navbar is-dark is-fixed-top">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img class="logo" src="/images/logo.png" width="112" height="28">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/about">分类</a>
+        <a class="navbar-item" href="/about">归档</a>
+        <a class="navbar-item" href="/about">关于</a>
+      </div>
+    </div>
   </div>
-</header>
+</nav>

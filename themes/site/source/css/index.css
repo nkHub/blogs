@@ -1,0 +1,45 @@
+/* *
+* 通用样式部分
+* */
+/* 通用的样式复写 */
+html {
+  background-color: #f5f5f5;
+}
+
+/* 滚动条的重置 */
+*::-webkit-scrollbar {
+    width: 10px;
+    z-index: 1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+
+* {
+    scrollbar-width: 10px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.page-container {
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  padding: 1.4em;
+  background-color: #ffffff;
+}
+
+.footer {
+  background-color: #ffffff;
+}
+
+.footer a {
+  color: #4a4a4a;
+}
+
+.header-user .image img {
+  max-height: none;
+}

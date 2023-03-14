@@ -8,23 +8,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <link rel="stylesheet" href="<%- url_for('/css/reset.css') %>">
-  <link rel="stylesheet" href="<%- url_for('/css/main.css') %>">
+  <link rel="shortcut icon" href="<%- url_for('/favicon.ico') %>" type="image/x-icon">
+  <link rel="stylesheet" href="<%- url_for('/css/bulma.min.css') %>">
+  <link rel="stylesheet" href="<%- url_for('/css/bulma-prefers-dark.css') %>">
+  <link rel="stylesheet" href="<%- url_for('/css/index.css') %>">
 </head>
 
-<body>
+<body class="has-navbar-fixed-top">
   <!-- header -->
   <%- fragment_cache('header', function(){ return partial('partial/header') }) %>
   <!-- content -->
   <main class="container">
-    <!-- side -->
-    <%- fragment_cache('sider', function(){ return partial('partial/sider') }) %>
-    <div class="content">
+    <div class="page-container">
       <%- body %>
     </div>
   </main>
   <!-- footer -->
   <%- fragment_cache('footer', function(){ return partial('partial/footer') }) %>
+  <!-- script -->
+  <script src="<%- url_for('/js/bulma.js') %>"></script>
 </body>
 
 </html>
