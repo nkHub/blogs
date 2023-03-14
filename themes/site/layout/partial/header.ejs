@@ -1,0 +1,10 @@
+<header class="header">
+  <div class="container flex spb">
+    <h1>网页标题</h1>
+    <nav class="nav">
+      <% for (var link in site.data.menu) { %>
+      <a href="<%= site.data.menu[link] %>"> <%= link %> </a>
+      <% } %>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,14 @@
+<div class="index">
+  <ul class="blogs-list">
+    <% page.posts.each(post => { %>
+      <li>
+        <h4>
+          <a href="<%= post.path %>"><%= post.title %></a>
+        </h4>
+      </li>
+    <% }) %>
+  </ul>
+  <div class="pagination">
+    <%- paginator({ prev_text: '<', next_text: '>' })  %>
+  </div>
+</div>

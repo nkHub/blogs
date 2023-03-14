@@ -1,0 +1,58 @@
+/* *
+* 通用样式部分
+* */
+body {
+  background-color: #F5F9F4;
+  color: black;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex.spb {
+  justify-content: space-between;
+}
+
+.tac {
+  text-align: center;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+main{
+  display: flex;
+  gap: 10px;
+}
+
+main .content{
+  padding: 0 6px;
+}
+
+aside{
+  width: 20%;
+}
+
+footer {
+  text-align: center;
+}
+
+aside section{
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+aside section + section{
+  margin-top: 4px;
+}
