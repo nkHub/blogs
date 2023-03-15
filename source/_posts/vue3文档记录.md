@@ -2,7 +2,8 @@
 title: vue3文档记录
 abbrlink: 23343
 date: 2023-03-14 18:25:23
-tags:
+tags: Vue3
+categories: 前端
 ---
 
 ## [vue3 文档](https://cn.vuejs.org/guide/introduction.html)
@@ -236,7 +237,7 @@ props 遵循单向数据流，props 更新会更新组件，反之则不会。�
 // name为组件名称或者组件对象 <components :is="name"></components>
 ```
 
-###### v-model 的实现
+#### v-model 的实现
 
 支持多 v-model 和 v-model.lazy 等修饰符的使用
 
@@ -252,7 +253,7 @@ props 遵循单向数据流，props 更新会更新组件，反之则不会。�
 
 ```
 
-###### 属性透传 class、style
+#### 属性透传 class、style
 
 ```javascript
 <template>
@@ -271,7 +272,7 @@ export default {
 </script>
 ```
 
-###### 插槽
+#### 插槽
 
 一、具名插槽
 
@@ -296,7 +297,7 @@ export default {
 </div>
 ```
 
-###### 依赖注入 provide、inject
+#### 依赖注入 provide、inject
 
 ```html
 // 上层

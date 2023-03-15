@@ -3308,7 +3308,7 @@ div.icon-text {
   border-bottom-right-radius: 0
 }
 
-.tag:not(body) {
+.tag:not(body,.token) {
   align-items: center;
   background-color: #f5f5f5;
   border-radius: 4px;
@@ -3323,127 +3323,127 @@ div.icon-text {
   white-space: nowrap
 }
 
-.tag:not(body) .delete {
+.tag:not(body,.token) .delete {
   margin-left: .25rem;
   margin-right: -.375rem
 }
 
-.tag:not(body).is-white {
+.tag:not(body,.token).is-white {
   background-color: #fff;
   color: #0a0a0a
 }
 
-.tag:not(body).is-black {
+.tag:not(body,.token).is-black {
   background-color: #0a0a0a;
   color: #fff
 }
 
-.tag:not(body).is-light {
+.tag:not(body,.token).is-light {
   background-color: #f5f5f5;
   color: rgba(0, 0, 0, .7)
 }
 
-.tag:not(body).is-dark {
+.tag:not(body,.token).is-dark {
   background-color: #363636;
   color: #fff
 }
 
-.tag:not(body).is-primary {
+.tag:not(body,.token).is-primary {
   background-color: #00d1b2;
   color: #fff
 }
 
-.tag:not(body).is-primary.is-light {
+.tag:not(body,.token).is-primary.is-light {
   background-color: #ebfffc;
   color: #00947e
 }
 
-.tag:not(body).is-link {
+.tag:not(body,.token).is-link {
   background-color: #485fc7;
   color: #fff
 }
 
-.tag:not(body).is-link.is-light {
+.tag:not(body,.token).is-link.is-light {
   background-color: #eff1fa;
   color: #3850b7
 }
 
-.tag:not(body).is-info {
+.tag:not(body,.token).is-info {
   background-color: #3e8ed0;
   color: #fff
 }
 
-.tag:not(body).is-info.is-light {
+.tag:not(body,.token).is-info.is-light {
   background-color: #eff5fb;
   color: #296fa8
 }
 
-.tag:not(body).is-success {
+.tag:not(body,.token).is-success {
   background-color: #48c78e;
   color: #fff
 }
 
-.tag:not(body).is-success.is-light {
+.tag:not(body,.token).is-success.is-light {
   background-color: #effaf5;
   color: #257953
 }
 
-.tag:not(body).is-warning {
+.tag:not(body,.token).is-warning {
   background-color: #ffe08a;
   color: rgba(0, 0, 0, .7)
 }
 
-.tag:not(body).is-warning.is-light {
+.tag:not(body,.token).is-warning.is-light {
   background-color: #fffaeb;
   color: #946c00
 }
 
-.tag:not(body).is-danger {
+.tag:not(body,.token).is-danger {
   background-color: #f14668;
   color: #fff
 }
 
-.tag:not(body).is-danger.is-light {
+.tag:not(body,.token).is-danger.is-light {
   background-color: #feecf0;
   color: #cc0f35
 }
 
-.tag:not(body).is-normal {
+.tag:not(body,.token).is-normal {
   font-size: .75rem
 }
 
-.tag:not(body).is-medium {
+.tag:not(body,.token).is-medium {
   font-size: 1rem
 }
 
-.tag:not(body).is-large {
+.tag:not(body,.token).is-large {
   font-size: 1.25rem
 }
 
-.tag:not(body) .icon:first-child:not(:last-child) {
+.tag:not(body,.token) .icon:first-child:not(:last-child) {
   margin-left: -.375em;
   margin-right: .1875em
 }
 
-.tag:not(body) .icon:last-child:not(:first-child) {
+.tag:not(body,.token) .icon:last-child:not(:first-child) {
   margin-left: .1875em;
   margin-right: -.375em
 }
 
-.tag:not(body) .icon:first-child:last-child {
+.tag:not(body,.token) .icon:first-child:last-child {
   margin-left: -.375em;
   margin-right: -.375em
 }
 
-.tag:not(body).is-delete {
+.tag:not(body,.token).is-delete {
   margin-left: 1px;
   padding: 0;
   position: relative;
   width: 2em
 }
 
-.tag:not(body).is-delete::after,
-.tag:not(body).is-delete::before {
+.tag:not(body,.token).is-delete::after,
+.tag:not(body,.token).is-delete::before {
   background-color: currentColor;
   content: "";
   display: block;
@@ -3454,26 +3454,26 @@ div.icon-text {
   transform-origin: center center
 }
 
-.tag:not(body).is-delete::before {
+.tag:not(body,.token).is-delete::before {
   height: 1px;
   width: 50%
 }
 
-.tag:not(body).is-delete::after {
+.tag:not(body,.token).is-delete::after {
   height: 50%;
   width: 1px
 }
 
-.tag:not(body).is-delete:focus,
-.tag:not(body).is-delete:hover {
+.tag:not(body,.token).is-delete:focus,
+.tag:not(body,.token).is-delete:hover {
   background-color: #e8e8e8
 }
 
-.tag:not(body).is-delete:active {
+.tag:not(body,.token).is-delete:active {
   background-color: #dbdbdb
 }
 
-.tag:not(body).is-rounded {
+.tag:not(body,.token).is-rounded {
   border-radius: 9999px
 }
 
@@ -3604,7 +3604,7 @@ a.tag:hover {
   text-transform: uppercase
 }
 
-.number {
+.number:not(.token) {
   align-items: center;
   background-color: #f5f5f5;
   border-radius: 9999px;

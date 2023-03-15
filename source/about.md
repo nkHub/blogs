@@ -1,6 +1,6 @@
 ---
 title: 关于
-layout: page
+layout: custom
 ---
 
 # 关于
