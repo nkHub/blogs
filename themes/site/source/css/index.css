@@ -44,8 +44,14 @@ html {
   max-height: none;
 }
 
-ul, ol, li{
-  list-style: none;
+.menu a{
+  text-decoration: none!important;
+}
+
+.message ul,
+.message ol,
+.message li{
+  list-style: none!important;
 }
 
 
