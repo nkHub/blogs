@@ -1,19 +1,23 @@
 /* *
 * 通用样式部分
 * */
+html {
+  background-color: #f5f5f5;
+}
+
 /* 滚动条的重置 */
-html::-webkit-scrollbar {
-    width: 10px;
-    z-index: 1;
+html::-webkit-scrollbar {
+  width: 10px;
+  z-index: 1;
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 5px;
+  background: #ccc;
+  border-radius: 5px;
 }
 
 html {
-    scrollbar-width: 10px;
+  scrollbar-width: 10px;
 }
 
 .logo {
@@ -39,14 +43,14 @@ html {
   max-height: none;
 }
 
-.menu a{
-  text-decoration: none!important;
+.menu a {
+  text-decoration: none !important;
 }
 
 .message ul,
 .message ol,
-.message li{
-  list-style: none!important;
+.message li {
+  list-style: none !important;
 }
 
 
@@ -86,22 +90,28 @@ html {
   overflow: hidden;
 }
 
-.badge:before{
+.badge:before {
   padding-left: 2px;
   content: '(';
 }
-.badge:after{
+
+.badge:after {
   content: ')';
 }
 
 @media (prefers-color-scheme: dark) {
+  html {
+    background-color: #17181c;
+  }
+
   .page-container,
   .footer,
-  .tag:not(body,.token){
+  .tag:not(body, .token) {
     background-color: rgba(200, 200, 200, 0.1)
   }
+
   .badge,
-  .footer a{
+  .footer a {
     color: #b5b5b5;
   }
 }
