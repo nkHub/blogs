@@ -1,0 +1,22 @@
+<div class="column is-half-desktop">
+  <a href="<%= post.permalink %>">
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4"><%= post.title %></p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="text-ellipsis-4">
+            <%= post.raw %>
+          </div>
+          <br>
+          <time datetime="<%= post.date.format('YYYY年MM月DD日 HH:mm:ss') %>">
+            <%= post.date.format('YYYY年MM月DD日 HH:mm:ss') %>
+          </time>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

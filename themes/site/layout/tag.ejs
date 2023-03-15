@@ -1,1 +1,45 @@
-<div class="tag"></div>
+<div class="tags-list">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+      <div class="block">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>公告</p>
+          </div>
+          <div class="message-body">
+            测试
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="column is-three-quarters-desktop">
+      <h2 class="title is-2">TAGS</h2>
+      <div class="block">
+        <div class="tags">
+          <%- list_tags({
+            class: {
+              li: 'tag',
+              count: 'badge'
+            }
+          }) %>
+        </div>
+      </div>
+      <% if(page.posts) { %>
+      <div class="columns">
+        <% page.posts.each(post => { %>
+        <%- partial('partial/article', { post }) %>
+        <% }) %>
+      </div>
+      <nav class="pagination is-right" role="navigation" aria-label="pagination">
+        <div class="pagination-list">
+          <%- paginator({
+            page_class: 'pagination-link',
+            current_class: 'is-current',
+            space_class: 'pagination-ellipsis'
+          }) %>
+        </div>
+      </nav>
+      <% } %>
+    </div>
+  </div>
+</div>

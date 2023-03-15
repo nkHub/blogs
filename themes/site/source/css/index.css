@@ -7,17 +7,17 @@ html {
 }
 
 /* 滚动条的重置 */
-*::-webkit-scrollbar {
+html::-webkit-scrollbar {
     width: 10px;
     z-index: 1;
 }
 
-*::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 5px;
 }
 
-* {
+html {
     scrollbar-width: 10px;
 }
 
@@ -83,4 +83,12 @@ ul, ol, li{
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 12;
   overflow: hidden;
+}
+
+.badge:before{
+  padding-left: 2px;
+  content: '(';
+}
+.badge:after{
+  content: ')';
 }

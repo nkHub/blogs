@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="<%- url_for('/css/index.css') %>">
 </head>
 
-<body class="has-navbar-fixed-top">
+<body>
   <!-- header -->
   <%- fragment_cache('header', function(){ return partial('partial/header') }) %>
   <!-- content -->
@@ -28,6 +28,7 @@
   <%- fragment_cache('footer', function(){ return partial('partial/footer') }) %>
   <!-- script -->
   <script src="<%- url_for('/js/bulma.js') %>"></script>
+  <script src="<%- url_for('/js/index.js') %>"></script>
 </body>
 
 </html>
