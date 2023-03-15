@@ -4,18 +4,9 @@
       欢迎
     </h1>
   </section>
-  <div class="columns">
+  <div class="columns is-multiline">
     <% page.posts.each(post => { %>
       <%- partial('partial/article', { post }) %>
     <% }) %>
   </div>
-  <nav class="pagination is-right" role="navigation" aria-label="pagination">
-    <div class="pagination-list">
-      <%- paginator({
-        page_class: 'pagination-link',
-        current_class: 'is-current',
-        space_class: 'pagination-ellipsis'
-      }) %>
-    </div>
-  </nav>
 </div>

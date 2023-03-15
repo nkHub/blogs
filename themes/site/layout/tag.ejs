@@ -7,7 +7,7 @@
             <p>公告</p>
           </div>
           <div class="message-body">
-            测试
+            开发中...
           </div>
         </article>
       </div>
@@ -25,7 +25,7 @@
         </div>
       </div>
       <% if(page.posts) { %>
-      <div class="columns">
+      <div class="columns is-multiline">
         <% page.posts.each(post => { %>
         <%- partial('partial/article', { post }) %>
         <% }) %>
@@ -35,7 +35,11 @@
           <%- paginator({
             page_class: 'pagination-link',
             current_class: 'is-current',
-            space_class: 'pagination-ellipsis'
+            space_class: 'pagination-ellipsis',
+            prev_text: '<',
+            prev_class: 'pagination-previous',
+            next_text: '>',
+            next_class: 'pagination-next',
           }) %>
         </div>
       </nav>
