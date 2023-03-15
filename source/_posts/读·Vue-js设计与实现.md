@@ -16,85 +16,85 @@ categories:
 
 ### 1. 命令式和声明式
 
-1. **命令式（Jquery 链式调用）**
-2. **声明式（关注于结果的命令式封装）**
+1. 命令式（Jquery 链式调用
+2. 声明式（关注于结果的命令式封装
 
 ### 2. 声明式与命令式性能和可维护性
 
-1. **性能：命令式 > 声明式**
-2. **可维护性：声明式 > 命令式**
+1. 性能：命令式 > 声明式
+2. 可维护性：声明式 > 命令式
 
 ### 3. 虚拟 DOM（如何让声明式的性能损失最小化）
 
-1. **性能消耗组成：创建 javascript 对象 + 差异查找 Diff + 直接修改（依赖数据量）**
-2. **innerHTML：全量更新 + 销毁旧节点 + 创建新节点（依赖模版量）**
-3. **对比**
+1. 性能消耗组成：创建 javascript 对象 + 差异查找 Diff + 直接修改（依赖数据量）
+2. innerHTML：全量更新 + 销毁旧节点 + 创建新节点（依赖模版量）
+3. 对比
 
-   | **innerHTML 模版** | **虚拟 DOM**   | **原生 javascript** |
+   | innerHTML 模版 | 虚拟 DOM   | 原生 javascript |
    | ------------------ | -------------- | ------------------- |
-   | **心智负担中**     | **心智负担轻** | **心智负担重**      |
-   | **性能差**         | **可维护性强** | **可维护性弱**      |
-   |                    | **性能不错**   | **性能高**          |
+   | 心智负担中     | 心智负担轻 | 心智负担重      |
+   | 性能差         | 可维护性强 | 可维护性弱      |
+   |                    | 性能不错   | 性能高          |
 
 ### 4. 框架设计类型（运行时、运行时 + 编译时、编译时）
 
-1. **运行时：直接运行的代码**
-2. **编译时：需要二次编译转换（例如模版的解析、语言的转换）**
-3. **示例：**
-   1. **运行时 + 编译时：Vue.js**
-   2. **编译时：Svelte.js**
+1. 运行时：直接运行的代码
+2. 编译时：需要二次编译转换（例如模版的解析、语言的转换）
+3. 示例：
+   1. 运行时 + 编译时：Vue.js
+   2. 编译时：Svelte.js
 
 ## 二、框架设计的核心要素
 
 ### 1. 提升用户开发体验
 
-1. **友好的提示（console）**
-   > **Vue3 的 Proxy 显示原始值的方法**
+1. 友好的提示（console）
+   > Vue3 的 Proxy 显示原始值的方法
    >
-   > 1. **target.value**
-   > 2. **Chrome 中 console 开启 Enable custom formatters**
+   > 1. target.value
+   > 2. Chrome 中 console 开启 Enable custom formatters
 
 ### 2. 控制框架的体积
 
-1. **开发版本关闭 console 减少体积**
-2. **Tree-shaking**
-   1. **无用代码的移除**
-   2. **副作用（无意义的函数使用，仅存在字段读取而不会被过滤）的移除**
+1. 开发版本关闭 console 减少体积
+2. Tree-shaking
+   1. 无用代码的移除
+   2. 副作用（无意义的函数使用，仅存在字段读取而不会被过滤）的移除
       ```
       /*#__PURE__*/ fn()
       ```
 
 ### 3. 框架构建产物
 
-1. **开发环境：不包含警告信息**
-2. **生产环境**
-   > **IIFE（Immediately Invoked Function Expression）： 立即调用的函数表达式**
+1. 开发环境：不包含警告信息
+2. 生产环境
+   > IIFE（Immediately Invoked Function Expression）： 立即调用的函数表达式
    >
-   > **例如：(funciton(){ })()**
+   > 例如：(funciton(){ })()
 
 ### 4. 特性关闭
 
-1. **关闭特性减少打包资源体积(例如 vue3 关闭组件选项 api)**
-2. **roll.js 预定义常量定制功能，例：**`__DEV__`、`__VUE_OPTIONS_API__`等
+1. 关闭特性减少打包资源体积(例如 vue3 关闭组件选项 api)
+2. roll.js 预定义常量定制功能，例：`__DEV__`、`__VUE_OPTIONS_API__`等
 
 ### 5. 错误处理
 
-1. **统一的错误处理函数注册**
+1. 统一的错误处理函数注册
 2. `app.config.errorHandler = () => {}`
 
 ### 6. TypeScript 支持
 
-1. **使用 TS 和对 TS 类型友好支持是两回事儿。**
+1. 使用 TS 和对 TS 类型友好支持是两回事儿。
 
 ## 三、Vue.js 3 的设计思路
 
 ### 1. 声明式描述 UI
 
-1. **模版描述**
+1. 模版描述
    ```html
    <div>test<div>
    ```
-2. **虚拟 DOM 描述（Vue.createElement）**
+2. 虚拟 DOM 描述（Vue.createElement）
    ```javascript
    const title = {
      tag: 'h1',
@@ -167,7 +167,7 @@ function mountObjComponent(vnode, container){
 
 ### 4. 模版的工作原理
 
-1. **编译器：将模板编译为虚拟 DOM 描述**
+1. 编译器：将模板编译为虚拟 DOM 描述
 
 ### 5. Vue.js 是各个模块组成的整体
 
@@ -179,7 +179,7 @@ function mountObjComponent(vnode, container){
 
 ### 1. 响应式数据与副作用函数
 
-** 副作用：值的变动会潜在的影响其他依赖此值的变量变动**
+ 副作用：值的变动会潜在的影响其他依赖此值的变量变动
 
 ### 2. 响应式数据的基本实现
 
@@ -203,7 +203,7 @@ const obj = new Proxy(data, {
 
 ### 3. 设计一个完善的响应系统
 
-**WeakMap 的 key 弱引用不影响垃圾回收**
+WeakMap 的 key 弱引用不影响垃圾回收
 
 ```javascript
 const data = {  text: 'hello' }
@@ -253,7 +253,7 @@ effect(function(){
 
 ### 4. 分支切换与 cleanup
 
-**ok 为 false 时，修改 text 不应该更新副作用函数，每次执行副作用函数前需要清空关联。**
+ok 为 false 时，修改 text 不应该更新副作用函数，每次执行副作用函数前需要清空关联。
 
 ```javascript
 'use strict';

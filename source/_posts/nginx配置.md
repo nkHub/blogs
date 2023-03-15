@@ -1,7 +1,7 @@
 ---
-title: nginx配置
+title: Nginx配置
 tags:
-  - nginx
+  - Nginx
 categories:
   - 前端
 abbrlink: 60533
