@@ -2,9 +2,17 @@
 <html lang="<%= config.language %>">
 
 <head>
-  <title>
-    <%= page.title || config.title %>
-  </title>
+  <% if(page.title) { %>
+    <title><%= config.title %> - <%= page.title %></title>
+  <% } else if(page.tag){ %>
+    <title><%= config.title %> - 标签: <%= page.tag %></title>
+  <% } else if(page.category){ %>
+    <title><%= config.title %> - 分类: <%= page.category %></title>
+  <% } else if(page.archive){ %>
+    <title><%= config.title %> - 归档</title>
+  <% } else { %>
+    <title><%= config.title %></title>
+  <% } %>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
