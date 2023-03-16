@@ -7,17 +7,17 @@ html {
 
 /* 滚动条的重置 */
 html::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
   z-index: 1;
 }
 
 html::-webkit-scrollbar-thumb {
   background: #ccc;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 html {
-  scrollbar-width: 10px;
+  scrollbar-width: 2px;
 }
 
 .logo {
@@ -293,23 +293,6 @@ a.category-list-item:hover {
   background-color: #fafafa;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: #17181c;
-  }
-
-  .page-container,
-  .footer,
-  .category-list-item:not(body, .token) {
-    background-color: rgba(200, 200, 200, 0.1)
-  }
-
-  .badge,
-  .footer a {
-    color: #b5b5b5;
-  }
-}
-
 /* 时间线 */
 .timeline{
   margin: 2rem auto;
@@ -378,4 +361,35 @@ a.category-list-item:hover {
 
 .pagination.is-right .pagination-previous{
   order: unset!important;
+}
+
+.content{
+  transition: 0.34s;
+}
+
+.mardown{
+  min-height: 360px;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #17181c;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: #b5b5b5;
+  }
+
+  .page-container,
+  .footer,
+  .category-list-item:not(body, .token),
+  .tag-cloud {
+    background-color: rgba(200, 200, 200, 0.1)
+  }
+
+  .badge,
+  .footer a {
+    color: #b5b5b5;
+  }
+  
 }
