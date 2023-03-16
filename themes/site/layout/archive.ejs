@@ -7,28 +7,28 @@
     </div>
     <div class="column is-three-quarters-desktop">
       <ul class="timeline">
-        <% var year, count = 0 %>
+        <% var year %>
         <% page.posts.each(post => { %>
-        <% const curYear = post.date.format('YYYY-MM') %>
-        <% if(!year) year = curYear %>
+          <% const curYear = post.date.format('YYYY-MM') %>
 
-        <% if(year === curYear && count === 0) { %>
-        <li class="year title is-3">
-          <%- curYear %>
-        </li>
-        <% }  %>
+          <% if(year !== curYear) { %>
+          <li class="year title is-4">
+            <%- curYear %>
+          </li>
+          <% }  %>
 
-        <li class="article">
-          <a class="article-content" href="<%- post.permalink %>">
-            <h3 class="title is-5">
-              <%- post.title %>
-            </h3>
-            <p class="subtitle is-6">
-              <%- post.date.format('YYYY年MM月DD日 HH:mm:ss') %>
-            </p>
-          </a>
-        </li>
-        <% year = curYear; count ++; %>
+          <% year = curYear; %>
+
+          <li class="article">
+            <a class="article-content" href="<%- post.permalink %>">
+              <h3 class="title is-5">
+                <%- post.title %>
+              </h3>
+              <p class="subtitle is-6">
+                <%- post.date.format('YYYY年MM月DD日 HH:mm:ss') %>
+              </p>
+            </a>
+          </li>
         <% }) %>
       </ul>
       <nav class="pagination is-right" role="navigation" aria-label="pagination">

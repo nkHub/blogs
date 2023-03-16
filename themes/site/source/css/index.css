@@ -312,8 +312,18 @@ a.category-list-item:hover {
 
 /* 时间线 */
 .timeline{
-  margin: 0 auto 2rem;
-  padding-left: 2rem;
+  margin: 2rem auto;
+  padding-left: 3rem;
+}
+
+.timeline .year{
+  position: relative;
+  left: -3rem;
+}
+
+.timeline .year:not(:first-child){
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .timeline .article{
@@ -336,6 +346,9 @@ a.category-list-item:hover {
   display: block;
   padding-left: 1.25rem;
   padding-bottom: 1rem;
+}
+
+.timeline .article:not(:last-child) .article-content{
   border-bottom: 1px dashed #b5b5b5;
 }
 
