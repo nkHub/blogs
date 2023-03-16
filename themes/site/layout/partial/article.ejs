@@ -8,8 +8,8 @@
           </div>
         </div>
         <div class="content">
-          <div class="text-ellipsis-4">
-            <%= post.raw %>
+          <div class="text-ellipsis-4 article-desc">
+            <%- truncate(strip_html(post.more) , { length: 500, omission: '' }) %>
           </div>
           <br>
           <time datetime="<%= post.date.format('YYYY年MM月DD日 HH:mm:ss') %>">

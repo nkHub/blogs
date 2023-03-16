@@ -1,7 +1,7 @@
 ---
 title: DOM
 abbrlink: 4276
-date: 2023-03-15 17:09:23
+date: 2019-09-26 11:34:19
 tags:
   - JavaScript
 categories:

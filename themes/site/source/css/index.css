@@ -284,6 +284,15 @@ a.category-list-item:hover {
   margin-right: .5rem
 }
 
+.article-desc{
+  min-height: 96px;
+}
+
+.tag-cloud{
+  padding: 1.25rem;
+  background-color: #fafafa;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     background-color: #17181c;
@@ -299,4 +308,61 @@ a.category-list-item:hover {
   .footer a {
     color: #b5b5b5;
   }
+}
+
+/* 时间线 */
+.timeline{
+  margin: 0 auto 2rem;
+  padding-left: 2rem;
+}
+
+.timeline .article{
+  position: relative;
+  padding: 1rem 0 0 1.25rem;
+  line-height: 1.6;
+}
+
+.timeline .article:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  content: '';
+  width: 1px;
+  background-color: #e5e5e5;
+}
+
+.timeline .article .article-content{
+  display: block;
+  padding-left: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #b5b5b5;
+}
+
+.timeline .article .article-content:before{
+  position: absolute;
+  top: 50%;
+  left: -0.2rem;
+  content: '';
+  margin-top: -0.2rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: #b5b5b5;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline .article .article-content:after{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: '';
+  margin-top: -0.5px;
+  width: 1.25rem;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+
+.pagination.is-right .pagination-previous{
+  order: unset!important;
 }

@@ -1,3 +1,50 @@
 <div class="archive">
-  <%- page.content %>
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+      <div class="block">
+        <%- partial('partial/notice', {}, { cache: true }) %>
+      </div>
+    </div>
+    <div class="column is-three-quarters-desktop">
+      <ul class="timeline">
+        <% var year, count = 0 %>
+        <% page.posts.each(post => { %>
+        <% const curYear = post.date.format('YYYY-MM') %>
+        <% if(!year) year = curYear %>
+
+        <% if(year === curYear && count === 0) { %>
+        <li class="year title is-3">
+          <%- curYear %>
+        </li>
+        <% }  %>
+
+        <li class="article">
+          <a class="article-content" href="<%- post.permalink %>">
+            <h3 class="title is-5">
+              <%- post.title %>
+            </h3>
+            <p class="subtitle is-6">
+              <%- post.date.format('YYYY年MM月DD日 HH:mm:ss') %>
+            </p>
+          </a>
+        </li>
+        <% year = curYear; count ++; %>
+        <% }) %>
+      </ul>
+      <nav class="pagination is-right" role="navigation" aria-label="pagination">
+        <div class="pagination-list">
+          <%- paginator({
+            page_class: 'pagination-link',
+            current_class: 'is-current',
+            space_class: 'pagination-ellipsis',
+            prev_class: 'pagination-previous',
+            next_class: 'pagination-next',
+            prev_text: '<i class="fa fa-angle-left"></i>',
+            next_text: '<i class="fa fa-angle-right"></i>',
+            escape: false
+          }) %>
+        </div>
+      </nav>
+    </div>
+  </div>
 </div>

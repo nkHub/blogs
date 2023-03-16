@@ -67,7 +67,7 @@ index_generator:
   order_by: -date
 
 archive_generator:
-  per_page: 0  #值为0表示不分页，按需填写
+  per_page: 6  #值为0表示不分页，按需填写
   yearly: true  #是否按年生成归档
   monthly: false
 
@@ -93,8 +93,6 @@ updated_option: 'mtime'
 ## Set per_page to 0 to disable pagination
 per_page: 6
 pagination_dir: page
-
-
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
@@ -139,3 +137,6 @@ feed:
 # 自动生成sitemap
 sitemap:
   path: sitemap.xml
+
+# hexo-neat
+neat_enable: false

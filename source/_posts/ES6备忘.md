@@ -1,7 +1,7 @@
 ---
 title: ES6备忘
 abbrlink: 35890
-date: 2023-03-15 17:11:02
+date: 2019-09-27 14:10:57
 tags:
   - JavaScript
 categories:
