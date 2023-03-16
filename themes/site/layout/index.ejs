@@ -5,8 +5,9 @@
     </h1>
   </section>
   <div class="columns is-multiline">
-    <% page.posts.each(post => { %>
+    <% page.posts.slice(0, 4).each(post => { %>
       <%- partial('partial/article', { post }) %>
     <% }) %>
   </div>
 </div>
+<% console.log(page.posts.length, page.data) %>

@@ -27,5 +27,32 @@
         <%- page.content %>
       </div>
     </div>
+    <div class="block">
+      <nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+        <% if(page.prev) { %>
+        <a class="pagination-previous" href="<%= page.prev.permalink %>">
+          <i class="fa fa-arrow-left"></i>&nbsp;
+          <%- page.prev.title %>
+        </a>
+        <% } else { %>
+          <a class="pagination-previous is-disabled" href="javascript:void(0);">
+            <i class="fa fa-arrow-left"></i>&nbsp;
+            空
+          </a>
+        <% } %>
+        <% if(page.next) { %>
+        <a class="pagination-next" href="<%= page.next.permalink %>">
+          <%- page.next.title %> &nbsp;
+          <i class="fa fa-arrow-right"></i>
+        </a>
+        <% } else { %>
+        <a class="pagination-next is-disabled" href="javascript:void(0);">
+            空 &nbsp;
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        <% } %>
+        <ul class="pagination-list"></ul>
+      </nav>
+    </div>
   </div>
 </div>
