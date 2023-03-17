@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://nikai.site
+url: https://nikai.site/
 # url: http://localhost:4000
 # permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -29,7 +29,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: "*.html"
+skip_render: "CNAME"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -109,8 +109,8 @@ theme: site
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: ''
-  branch: master
+  repo: https://github.com/nkHub/blogs.git
+  branch: gh-pages
 
 # 短链接
 permalink: p/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
@@ -141,4 +141,4 @@ sitemap:
   path: sitemap.xml
 
 # hexo-neat
-neat_enable: false
+neat_enable: true
