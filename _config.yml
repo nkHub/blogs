@@ -13,8 +13,8 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-# url: http://nikai.site
-url: http://localhost:4000
+url: http://nikai.site
+# url: http://localhost:4000
 # permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -140,14 +140,3 @@ sitemap:
 
 # hexo-neat
 neat_enable: false
-
-# Security
-encrypt: # hexo-blog-encrypt
-  slient: true
-  abstract: 有东西被加密了, 请输入密码查看.
-  message: 您好, 这里需要密码.
-  tags:
-  - { name: tagName, password: 密码B }
-  theme: wave
-  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
-  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.

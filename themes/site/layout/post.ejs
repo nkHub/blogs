@@ -1,24 +1,16 @@
 <div class="columns">
   <div class="column is-one-quarter is-hidden-mobile">
     <div class="block">
-      <article class="message is-dark <% if (page.encrypt == true) { %>style='display:none' <% } %>">
+      <article class="message is-dark">
         <div class="message-header">
           <p>目录</p>
         </div>
         <div class="message-body">
-          <% if (page.encrypt == true) { %>
-            <%- toc(page.origin, {
-              class: 'menu',
-              class_child: 'menu-list',
-              list_number: false
-            }) %>
-          <% } else { %>
-            <%- toc(page.content, {
-              class: 'menu',
-              class_child: 'menu-list',
-              list_number: false
-            }) %>
-          <% } %>
+          <%- toc(page.content, {
+            class: 'menu',
+            class_child: 'menu-list',
+            list_number: false
+          }) %>
         </div>
       </article>
     </div>

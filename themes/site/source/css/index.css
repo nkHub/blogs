@@ -383,12 +383,14 @@ a.category-list-item:hover {
   .page-container,
   .footer,
   .category-list-item:not(body, .token),
-  .tag-cloud {
+  .tag-cloud,
+  .tag:not(body, .token){
     background-color: rgba(200, 200, 200, 0.1)
   }
 
   .badge,
-  .footer a {
+  .footer a,
+  .category-list-count{
     color: #b5b5b5;
   }
   
