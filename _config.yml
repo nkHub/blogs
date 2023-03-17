@@ -108,7 +108,9 @@ theme: site
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'git'
+  repo: ''
+  branch: master
 
 # 短链接
 permalink: p/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
