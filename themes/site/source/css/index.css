@@ -363,8 +363,8 @@ a.category-list-item:hover {
   order: unset!important;
 }
 
-.content{
-  transition: 0.34s;
+.content a{
+  word-break: break-all;
 }
 
 .mardown{
