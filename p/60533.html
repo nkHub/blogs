@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>nksite - Nginx配置</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="/css/fa.min.css"><link rel="stylesheet" href="/css/bulma.min.css"><link rel="stylesheet" href="/css/bulma-prefers-dark.css"><link rel="stylesheet" href="/css/prism.min.css"><link rel="stylesheet" href="/css/prism.dark.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="alternate" href="/atom.xml" title="nksite" type="application/atom+xml"></head><body><nav class="navbar is-dark"><div class="container"><div class="navbar-brand"><a class="navbar-item" href="/"><img class="logo" src="/images/logo.png" width="112" height="28"> </a><a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar"><span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span></a></div><div id="navbar" class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/categories/前端">分类 </a><a class="navbar-item" href="/tags/CSS/">标签 </a><a class="navbar-item" href="/archives">归档 </a><a class="navbar-item" href="/about.html">关于</a></div></div></div></nav><main class="container"><div class="page-container"><div class="columns"><div class="column is-one-quarter is-hidden-mobile"><div class="block"><article class="message is-dark"><div class="message-header"><p>目录</p></div><div class="message-body"><ol class="menu"><li class="menu-item menu-level-1"><a class="menu-link" href="#nginx"><span class="menu-text">nginx</span></a><ol class="menu-list"><li class="menu-item menu-level-4"><a class="menu-link" href="#%E5%85%B6%E4%BB%96"><span class="menu-text">其他</span></a></li></ol></li></ol></div></article></div><div class="block"><div class="tag-cloud"><h3 class="title is-6">其他</h3><a href="/tags/Android/" style="font-size:10px">Android</a> <a href="/tags/CSS/" style="font-size:16.67px">CSS</a> <a href="/tags/Flutter/" style="font-size:10px">Flutter</a> <a href="/tags/Git/" style="font-size:10px">Git</a> <a href="/tags/JQuery/" style="font-size:10px">JQuery</a> <a href="/tags/JavaScript/" style="font-size:13.33px">JavaScript</a> <a href="/tags/Mongodb/" style="font-size:10px">Mongodb</a> <a href="/tags/Nginx/" style="font-size:10px">Nginx</a> <a href="/tags/Nodejs/" style="font-size:10px">Nodejs</a> <a href="/tags/PS/" style="font-size:10px">PS</a> <a href="/tags/React/" style="font-size:10px">React</a> <a href="/tags/Vue/" style="font-size:20px">Vue</a> <a href="/tags/Vue2/" style="font-size:10px">Vue2</a> <a href="/tags/Vue3/" style="font-size:13.33px">Vue3</a> <a href="/tags/docker/" style="font-size:10px">docker</a> <a href="/tags/npm/" style="font-size:13.33px">npm</a> <a href="/tags/%E5%85%B6%E4%BB%96/" style="font-size:10px">其他</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9F%BA%E7%A1%80/" style="font-size:10px">浏览器基础</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size:13.33px">阅读</a></div></div></div><div class="column is-three-quarters-desktop"><div class="block"><h1 class="title is-1">Nginx配置</h1><p class="subtitle is-7">发布日期：2019年11月10日 14:06:06</p></div><div class="block"><div class="content mardown"><h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx"><span class="token comment">#配置用户或者组，默认为nobody nobody。</span>
+<span class="token directive"><span class="token keyword">user</span>  www www</span><span class="token punctuation">;</span>
+
+<span class="token comment">#允许生成的进程数，默认为1</span>
+<span class="token directive"><span class="token keyword">worker_processes</span> auto</span><span class="token punctuation">;</span>
+
+<span class="token comment">#制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg</span>
+<span class="token directive"><span class="token keyword">error_log</span>  /home/wwwlogs/nginx_error.log  crit</span><span class="token punctuation">;</span>
+
+<span class="token comment">#指定nginx进程运行文件存放地址</span>
+<span class="token directive"><span class="token keyword">pid</span>        /usr/local/nginx/logs/nginx.pid</span><span class="token punctuation">;</span>
+
+<span class="token comment">#指定此进程可以打开的最大文件描述符的值。</span>
+<span class="token directive"><span class="token keyword">worker_rlimit_nofile</span> <span class="token number">51200</span></span><span class="token punctuation">;</span>
+
+<span class="token directive"><span class="token keyword">events</span></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">#设置网路连接序列化，防止惊群现象发生，默认为on</span>
+    <span class="token directive"><span class="token keyword">accept_mutex</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+    <span class="token comment">#事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport</span>
+    <span class="token directive"><span class="token keyword">use</span> epoll</span><span class="token punctuation">;</span>
+    <span class="token comment">#最大连接数，默认为512</span>
+    <span class="token directive"><span class="token keyword">worker_connections</span> <span class="token number">51200</span></span><span class="token punctuation">;</span>
+    <span class="token comment">#设置一个进程是否同时接受多个网络连接，默认为off</span>
+    <span class="token directive"><span class="token keyword">multi_accept</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token directive"><span class="token keyword">http</span></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">#文件扩展名与文件类型映射表</span>
+    <span class="token directive"><span class="token keyword">include</span>       mime.types</span><span class="token punctuation">;</span>
+    <span class="token comment">#默认文件类型，默认为text/plain</span>
+    <span class="token directive"><span class="token keyword">default_type</span>  application/octet-stream</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">server_names_hash_bucket_size</span> <span class="token number">128</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">client_header_buffer_size</span> <span class="token number">32k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">large_client_header_buffers</span> <span class="token number">4</span> <span class="token number">32k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">client_max_body_size</span> <span class="token number">50m</span></span><span class="token punctuation">;</span>
+
+    <span class="token comment">#允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。</span>
+    <span class="token directive"><span class="token keyword">sendfile</span>   <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">tcp_nopush</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+    <span class="token comment">#连接超时时间，默认为75s，可以在http，server，location块。</span>
+    <span class="token directive"><span class="token keyword">keepalive_timeout</span> <span class="token number">60</span></span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">tcp_nodelay</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">fastcgi_connect_timeout</span> <span class="token number">300</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">fastcgi_send_timeout</span> <span class="token number">300</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">fastcgi_read_timeout</span> <span class="token number">300</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">fastcgi_buffer_size</span> <span class="token number">64k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">fastcgi_buffers</span> <span class="token number">4</span> <span class="token number">64k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">fastcgi_busy_buffers_size</span> <span class="token number">128k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">fastcgi_temp_file_write_size</span> <span class="token number">256k</span></span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">gzip</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_min_length</span>  <span class="token number">1k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_buffers</span>     <span class="token number">4</span> <span class="token number">16k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_http_version</span> 1.1</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_comp_level</span> <span class="token number">2</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_types</span>     text/plain application/javascript application/x-javascript text/javascript text/css application/xml application/xml+rss</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_vary</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_proxied</span>   expired no-cache no-store private auth</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_disable</span>   <span class="token string">"MSIE [1-6]\."</span></span><span class="token punctuation">;</span>
+
+    <span class="token comment">#limit_conn_zone $binary_remote_addr zone=perip:10m;</span>
+    <span class="token comment">#如果开启limit_conn_zone,添加 "limit_conn perip 10;" 到服务模块</span>
+
+    <span class="token directive"><span class="token keyword">server_tokens</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">access_log</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span> <span class="token comment">#取消服务日志 </span>
+
+    <span class="token comment">#负载均衡设置</span>
+    <span class="token comment">#upstream mysvr &#123; </span>
+    <span class="token comment">#    server 127.0.0.1:7878; </span>
+    <span class="token comment">#    server 192.168.10.121:3333 backup;  #热备     </span>
+    <span class="token comment">#&#125;</span>
+
+    <span class="token comment">#主页</span>
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">&#123;</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span> default_server</span><span class="token punctuation">;</span> <span class="token comment">#监听端口</span>
+        <span class="token directive"><span class="token keyword">server_name</span> nikai.site</span><span class="token punctuation">;</span> <span class="token comment">#监听地址</span>
+
+        <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">&#123;</span> <span class="token comment">#请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:3001</span><span class="token punctuation">;</span>  <span class="token comment">#请求转向mysvr 定义的服务器列表</span>
+            <span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span> <span class="token comment">#Nginx服务器提供代理服务的http协议版本1.0，1.1，默认设置为1.0版本</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Upgrade <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">'upgrade'</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_cache_bypass</span> <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token directive"><span class="token keyword">access_log</span>  /var/www/nksite/nksite.log</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">#http重定向</span>
+    <span class="token directive"><span class="token keyword">server</span></span><span class="token punctuation">&#123;</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+        <span class="token comment">#listen [::]:80;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> www.nikai.site  nikai.site</span><span class="token punctuation">;</span>
+        
+        <span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$server_port</span> = 80)</span> <span class="token punctuation">&#123;</span>
+            <span class="token directive"><span class="token keyword">return</span> <span class="token number">301</span> https://<span class="token variable">$server_name</span><span class="token variable">$request_uri</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$scheme</span> = http)</span> <span class="token punctuation">&#123;</span>
+            <span class="token directive"><span class="token keyword">return</span> <span class="token number">301</span> https://<span class="token variable">$server_name</span><span class="token variable">$request_uri</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>	
+
+        <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">&#123;</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:3000</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Upgrade <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">'upgrade'</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_cache_bypass</span> <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token directive"><span class="token keyword">access_log</span>  /var/www/nksite/nksite.log</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">#主页https</span>
+    <span class="token directive"><span class="token keyword">server</span></span><span class="token punctuation">&#123;</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl http2</span><span class="token punctuation">;</span>
+    
+        <span class="token directive"><span class="token keyword">server_name</span> www.nikai.site nikai.site</span><span class="token punctuation">;</span>	 		
+
+        <span class="token directive"><span class="token keyword">ssl</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">ssl_certificate</span> /var/www/nksite/bin/www.nikai.site.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /var/www/nksite/bin/www.nikai.site.key</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">ssl_session_cache</span>    shared:SSL:1m</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_session_timeout</span>  <span class="token number">5m</span></span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">ssl_ciphers</span>  HIGH:!aNULL:!MD5</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span>  <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">&#123;</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:3000</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Upgrade <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">'upgrade'</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_cache_bypass</span> <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+            
+        <span class="token punctuation">&#125;</span>
+        <span class="token directive"><span class="token keyword">access_log</span>  /var/www/nksite/nksite.log</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token directive"><span class="token keyword">include</span> vhost/*.conf</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><pre><code>1. 惊群现象：一个网路连接到来，多个睡眠的进程被同事叫醒，但只有一个进程能获得链接，这样会影响系统性能。
+</code></pre></div></div><div class="block"><nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination"><a class="pagination-previous" href="https://nikai.site/p/31812.html"><i class="fa fa-angle-left"></i>&nbsp; vue.config.js </a><a class="pagination-next" href="https://nikai.site/p/35890.html">ES6备忘 &nbsp; <i class="fa fa-angle-right"></i></a><ul class="pagination-list"></ul></nav></div></div></div></div></main><footer class="footer"><div class="content has-text-centered"><p>©ヽ(･ω･´ﾒ). All rights reserved.</p></div></footer><script src="/js/bulma.js"></script><script src="/js/index.js"></script></body></html>
