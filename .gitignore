@@ -9,3 +9,4 @@ _multiconfig.yml
 yarn.lock
 pnpm-lock.yaml
 .deploy_git
+.deploy_git/*
