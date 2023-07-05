@@ -55,25 +55,25 @@ date: 2019-09-25 20:03:04
 ##### Android Stuido
 
 首选项 => 插件 搜索Flutter与Dart
-![flutter-Android-plugins](https://cdn.nikai.site/flutter-android-plugins.jpg?imageslim)
+![flutter-Android-plugins](/images/flutter-android-plugins.jpg)
 
 首选项 => 语言与框架 => Flutter或Dart设置sdk路径 
-![flutter-Android-set](https://cdn.nikai.site/flutter-android-set.jpg?imageslim)
+![flutter-Android-set](/images/flutter-android-set.jpg)
 
 -----
 
 ##### 安装完成
-![flutter-success](https://cdn.nikai.site/flutter-success.jpg?imageslim)
+![flutter-success](/images/flutter-success.jpg)
 
 #### 运行命令 flutter run
 
 #### mac真机调试iOS
 
 ###### xcode设置添加账户
-![flutter-run-ios-account](https://cdn.nikai.site/flutter-run-ios-account.jpg?imageslim)
+![flutter-run-ios-account](/images/flutter-run-ios-account.jpg)
 
 ###### 项目设置Bundle identifier、选择添加的账户
-![flutter-run-ios-siging](https://cdn.nikai.site/flutter-run-ios-siging.jpg?imageslim)
+![flutter-run-ios-siging](/images/flutter-run-ios-siging.jpg)
 
 marked: mac 10.14.6 & xcode 10.3 & Android studio 3.5 (19.09.05)
 

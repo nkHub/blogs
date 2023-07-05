@@ -367,8 +367,18 @@ a.category-list-item:hover {
   word-break: break-all;
 }
 
+.content li code{
+  display: inline-block;
+}
+
 .mardown{
   min-height: 360px;
+}
+
+@media screen and (min-width: 768px) {
+  .content img {
+    max-width: 70%!important;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

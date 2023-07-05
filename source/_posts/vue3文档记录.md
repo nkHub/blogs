@@ -111,7 +111,7 @@ v-if 和 v-for 在同一级时，v-if 的优先级更高无法访问 v-for 内�
 
 ### 9、生命周期
 
-![组件生命周期图示](https://cdn.nikai.site/WZIHRAW2ET1UY9XC0MY0G6.png)
+![组件生命周期图示](/images/WZIHRAW2ET1UY9XC0MY0G6.png)
 
 ### 10、侦听器
 

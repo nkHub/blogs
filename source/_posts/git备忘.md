@@ -10,7 +10,7 @@ date: 2019-09-27 00:19:36
 
 ### git常用命令
 
-![git](https://cdn.nikai.site/git.jpg?imageslim)
+![git](/images/git.jpg)
 
 #### 其他
 
