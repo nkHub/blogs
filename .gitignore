@@ -10,3 +10,4 @@ yarn.lock
 pnpm-lock.yaml
 .deploy_git
 .deploy_git/*
+.github
