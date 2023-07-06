@@ -14,7 +14,7 @@ categories:
 页面中由于元素的大小、宽高、布局隐藏等发生变化会引起页面的回流和重绘；
 元素的外观风格如颜色等发生变化将引起重绘。减少或避免发生回流，尽量单次修改（css或js），减少DOM访问，脱离文档流;
 
-##### 1. 常用css：
+##### 1. 常用css
 
 样式重置[reset.css](https://meyerweb.com/eric/tools/css/reset/)
 
@@ -89,7 +89,7 @@ categories:
   
 ```
 
-##### 2. css Hack：
+##### 2. css Hack
 
 hack       | IE6| IE7| IE8| IE9| IE10| 现代
 ---        |:--:|:--:|:--:|:--:|:--:|:--:

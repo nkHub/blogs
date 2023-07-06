@@ -18,7 +18,7 @@ categories:
 
 常量定义(引用类型，数据地址不变)，其他与let相同。
 
-##### 3. 解析复构：
+##### 3. 解析复构
 
 对应位置赋值
 
@@ -29,13 +29,13 @@ categories:
   console.log(b); // b = 1;
 ```
 
-##### 4. 模板字符串：
+##### 4. 模板字符串
 
 ```javascript
   `字符串/HTML + ${ 变量名 }`
 ```
 
-##### 5. 箭头函数：
+##### 5. 箭头函数
 
 函数体内不会绑定prototype原型对象
 
@@ -43,7 +43,7 @@ categories:
   var 函数名 = (参数 = 默认值) => { 函数体 } ;
 ```
 
-##### 6. 对象：
+##### 6. 对象
 
 ```javascript
   obj::fnName;  //对象::函数 绑定上下文，类似于 fn().bind(this)
@@ -54,7 +54,7 @@ categories:
   let config = Object.assign( {}, defaultConfig, options ); //配置合并
 ```
 
-###### Class：
+###### Class
 
 不存在变量提升，super继承父级constructor方法(如无需修改则可不使用constructor方法)。
 
@@ -71,7 +71,7 @@ categories:
  }
 ```
 
-##### 7. 数组:
+##### 7. 数组
 
 Array.from可将类似格式转换为数组。
 
@@ -86,7 +86,7 @@ Array.from可将类似格式转换为数组。
   flat，map，reduce，forEach，some，every...
 ```
 
-##### 8. 拓展运算符：
+##### 8. 拓展运算符
 
 拓展运算符( ... name) 主要用于函数调用,将一个数组，变为参数序列,将name数组元素依次添加到外面
 
@@ -98,7 +98,7 @@ Array.from可将类似格式转换为数组。
   let n = [...array]; //数组浅复制
 ```
 
-##### 9. Promise：
+##### 9. Promise
 
 ```javascript
   //正常处理
@@ -117,7 +117,7 @@ Array.from可将类似格式转换为数组。
   PromiseList.reduce((accumulator,next) => accumulator.then(() => next.then()),Promise.resolve());
 ```
 
-##### 10. Set：
+##### 10. Set
 
 Set不含重复的数据结构，包含add,del,has,clear方法, WeakSet与WeakMap类似但只支持key为对象;
 
@@ -125,11 +125,19 @@ Set不含重复的数据结构，包含add,del,has,clear方法, WeakSet与WeakMa
   [...new Set(array)] 数组去重
 ```
 
-##### 11. Map：
+##### 11. Map
 
 Map与传统“键-值”相对的“值-值”，数据结构;
 
-##### 12. async:
+```javascript
+  const test = new Map([
+    [1, '测试1'],
+    [2, '测试2'],
+  ])
+  console.log(test.get(1))
+```
+
+##### 12. async
 
 函数: 函数体内可使用 await调用Promise函数回调，实现异步函数同步写法，返回Promise对象。
 
@@ -139,7 +147,7 @@ Map与传统“键-值”相对的“值-值”，数据结构;
   }
 ```
 
-##### 13. generator:
+##### 13. generator
 
 generator类似于async, await换位yield，返回Promise对象。
 
@@ -153,7 +161,7 @@ generator类似于async, await换位yield，返回Promise对象。
   Test().next();
 ```
 
-##### 14. 模块:
+##### 14. 模块
 
 '编译时加载/静态加载'不同于commonJS的'运行时加载'。
 

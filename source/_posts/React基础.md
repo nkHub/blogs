@@ -10,7 +10,7 @@ date: 2019-09-25 20:34:38
 
 ## [React简介](https://reactjs.org/docs/hello-world.html)
 
-### 1. npm项目创建：
+### 1. npm项目创建
 
 ```bash
   npm install –g create-react-App
@@ -21,7 +21,7 @@ date: 2019-09-25 20:34:38
   npm run build //打包运行
 ```
 
-### 2. 组件样式导入：
+### 2. 组件样式导入
 
 [默认ES6方式导入](/view/web/ES6.md?id=_14-模块)。
 
@@ -30,7 +30,7 @@ date: 2019-09-25 20:34:38
   import 'style.css';
 ```
 
-### 3. 渲染：
+### 3. 渲染
 
 ```javascript
   import ReactDom from 'react-dom';
@@ -41,7 +41,7 @@ date: 2019-09-25 20:34:38
   );
 ```
 
-### 4. 组件：
+### 4. 组件
 
 PureComponent组件相对于Component，已完成props与state的浅对比，优化性能，复杂数据不建议使用，易出错,同时子组件须使用PureComponent。
 
@@ -91,7 +91,7 @@ PureComponent组件相对于Component，已完成props与state的浅对比，优
   <div dangerouslySetInnerHTML={{__html: html字符串}}></div>
 ```
 
-### 4. 事件：
+### 4. 事件
 
 
 ```jsx
@@ -109,7 +109,7 @@ PureComponent组件相对于Component，已完成props与state的浅对比，优
   }
 ```
 
-### 5. props：
+### 5. props
 
 ```html
   <组件名 参数名={参数} />  //组件可从this.props中获取传递的参数
@@ -126,7 +126,7 @@ PureComponent组件相对于Component，已完成props与state的浅对比，优
   }
 ```
 
-### 6. ref：
+### 6. ref
 
 ```jsx
   ...
@@ -171,11 +171,11 @@ PureComponent组件相对于Component，已完成props与state的浅对比，优
 
 ## react-redux
 
-### 1. 简介：
+### 1. 简介
 
 状态从一个初始状态开始，被一系列动作序列改变
 
-### 2. 数据层绑定：
+### 2. 数据层绑定
 
 ```javascript
   import { Provider } from 'react-redux';
@@ -199,7 +199,7 @@ PureComponent组件相对于Component，已完成props与state的浅对比，优
   }
 ```
 
-### 3. UI层绑定：
+### 3. UI层绑定
 
 ```javascript
   import { connect } from 'react-redux';
@@ -224,9 +224,9 @@ PureComponent组件相对于Component，已完成props与state的浅对比，优
   )(component);
 ```
 
-### 4. 内部结构：
+### 4. 内部结构
 
-#### 1. store：
+#### 1. store
 
 store由createStore创建，可使用combineReducers() 合并多个reducer，ApplyMiddleware(thunk, promise, logger)中间件拓展 如异步、日志等。
 
@@ -249,7 +249,7 @@ i. 状态存储中心，store.js代码：
   };
   export default configureStore;
 ```
-#### 2. reducer：
+#### 2. reducer
 
 i. 模块操作合并，reducer.js代码如下
 
@@ -294,11 +294,11 @@ ii. 单个页面模块部分，接受action返回新State;
 ```
 
 
-#### 3. state：
+#### 3. state
 
 时点数据集合，一个State对应一个View，获取：store.getState();
 
-#### 4. action：
+#### 4. action
 
 ```javascript
   let action = {

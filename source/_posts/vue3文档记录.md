@@ -237,7 +237,8 @@ props 遵循单向数据流，props 更新会更新组件，反之则不会。�
 动态组件和 vue2 相同。
 
 ```html
-// name为组件名称或者组件对象 <components :is="name"></components>
+  // name为组件名称或者组件对象
+  <components :is="name"></components>
 ```
 
 #### v-model 的实现
@@ -375,19 +376,27 @@ const AsyncComp = defineAsyncComponent({
 import { ref } from "vue";
 
 export function useFetch(url) {
+  const loading = ref(false);
   const data = ref(null);
   const error = ref(null);
 
-  fetch(url)
-    .then((res) => res.json())
-    .then((json) => (data.value = json))
-    .catch((err) => (error.value = err));
-
-  return { data, error };
+  const request = url => {
+    loading.value = true
+    return fetch(url).then((res) => res.json()).then((json) => {
+      loading.value = false
+      data.value = json
+    }).catch((err) => {
+      loading.value = false
+      error.value = err
+    });
+  }
+  return { data, error, request };
 }
 
 <script setup>
-  import {useFetch} from './fetch.js' const {(data, error)} = useFetch('...')
+  import { useFetch } from './fetch.js'
+  const { data, loading, error, request } = useFetch('url')
+  request()
 </script>;
 ```
 

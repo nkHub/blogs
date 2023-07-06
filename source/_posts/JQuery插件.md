@@ -10,7 +10,7 @@ categories:
 
 # Jquery
 
-##### 1. 自定义插件配置(插件名称：plugin)
+##### 自定义插件配置(插件名称：plugin)
 
 ```javascript
     'use strict';
