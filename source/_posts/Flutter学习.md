@@ -3,7 +3,7 @@ title: Flutter学习
 tags:
   - Flutter
 categories:
-  - 前端
+  - App
 abbrlink: 52726
 date: 2019-09-25 20:03:04
 ---

@@ -3,7 +3,7 @@ title: Anroid初始学习
 tags:
   - Android
 categories:
-  - 前端
+  - App
 abbrlink: 57043
 date: 2019-09-26 11:53:50
 ---
