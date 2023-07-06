@@ -1,5 +1,5 @@
 ---
-title: git备忘
+title: Git备忘
 tags:
   - Git
 categories:

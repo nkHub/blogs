@@ -3,7 +3,7 @@ title: PS备忘
 tags:
   - PS
 categories:
-  - 前端
+  - 设计
 abbrlink: 3145
 date: 2019-09-25 22:34:56
 ---

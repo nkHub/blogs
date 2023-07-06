@@ -3,7 +3,7 @@ title: Nginx配置
 tags:
   - Nginx
 categories:
-  - 前端
+  - 后端
 abbrlink: 60533
 date: 2019-11-10 14:06:06
 ---
