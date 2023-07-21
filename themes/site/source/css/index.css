@@ -376,11 +376,12 @@ a.category-list-item:hover {
 }
 
 #word-cloud{
-  height: 180px;
+  min-height: 180px;
 }
 
 #word-cloud span{
   cursor: pointer;
+  user-select: none;
 }
 
 @media screen and (min-width: 768px) {
