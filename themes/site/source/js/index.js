@@ -27,4 +27,23 @@ window.onload = function(){
       document.documentElement.scrollTop = 0
     }
   }
+  // 词云
+  const words = document.getElementById('word-cloud')
+  if(WordCloud && words){
+    const list = []
+    for(let k in words.children){
+      const v = words.children[k]
+      if(v.href && v.innerText){
+        const heat = parseInt(v.style.fontSize) + 2
+        list.push([v.innerText, heat, v.href])
+      }
+    }
+    WordCloud(words, {
+      backgroundColor: 'transparent',
+      list,
+      click(item){
+        window.location.href = item[2]
+      }
+    })
+  }
 }

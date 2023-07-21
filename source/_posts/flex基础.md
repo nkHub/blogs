@@ -17,9 +17,10 @@ categories:
   display: flex;
   justify-content: center; // flex-start/flex-end/space-around/space-between
   align-items: center;     // flex-start/flex-end
+  gap: 10px;
 ```
 
-### Flex的剩余空间分配
+### flex的剩余空间分配
 
 剩余空间：所有项宽度无法占满容器时剩余的空间。
 

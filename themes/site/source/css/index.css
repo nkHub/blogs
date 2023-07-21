@@ -375,6 +375,14 @@ a.category-list-item:hover {
   min-height: 360px;
 }
 
+#word-cloud{
+  height: 180px;
+}
+
+#word-cloud span{
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .content img {
     max-width: 70%!important;

@@ -8,6 +8,6 @@ categories:
   - 数据库
 ---
 
-# 内存溢出
+### 内存溢出
 
 db.getColleciton(colleciton).createIndex(key)需要设置`createIndex`来创建索引。
