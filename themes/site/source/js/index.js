@@ -79,6 +79,7 @@ window.onload = function(){
     unescape: false
   });
   const box = modal.root.querySelector('.panel .panel-box');
+  const empty = box.innerHTML;
   // 预加载数据
   localSearch.fetchData();
   function handleInputChange(){
@@ -89,7 +90,7 @@ window.onload = function(){
       const list = items.reduce((t, v) => t + v.item, '<ul>') + '</ul>';
       box.innerHTML = list;
     }else{
-      box.innerHTML = '<div class="search-result-icon"><i class="far fa-file fa-3x"></i><p class="search-result-tips">找不到匹配数据！</p></div>'
+      box.innerHTML = empty;
     }
   }
   input.addEventListener('input', handleInputChange);

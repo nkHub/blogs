@@ -430,7 +430,9 @@ a.category-list-item:hover {
 }
 
 .search-result-box li a .search-keyword{
-  background-color: #cccccc;
+  padding: 0 3px;
+  color: #ffffff;
+  background-color: #999999;
 }
 
 .search-result-box .search-result-icon{
@@ -442,7 +444,7 @@ a.category-list-item:hover {
   font-size: 13px;
 }
 
-.search-result-box .search-result-icon .fa-file{
+.search-result-box .search-result-icon .search-empty{
   margin-bottom: 10px;
 }
 
