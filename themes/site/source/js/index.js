@@ -46,4 +46,51 @@ window.onload = function(){
       }
     })
   }
+  // 菜单
+  const links = document.querySelectorAll('.menu-link')
+  for(let i=0; i < links.length;i++){
+    const id = decodeURIComponent(links[i].hash).replace('#', '');
+    links[i].href = 'javascript:void(0);';
+    links[i].addEventListener('click', function(){
+      const target = document.getElementById(id)
+      document.documentElement.scrollTop = target.offsetTop - 16;
+    })
+  }
+  // 搜索部分
+  const modal = Bulma('#modal-search').modal({
+    style: 'content'
+  });
+  const input = modal.root.querySelector('input');
+  document.getElementById('header-search-input').addEventListener('click', function(){
+    modal.open();
+  });
+  modal.on('open', function(){
+    input.focus();
+  });
+  modal.on('close', function(){
+    input.blur();
+    input.value = '';
+    handleInputChange();
+  });
+  // 本地搜索
+  const localSearch = new LocalSearch({
+    path: '/search.xml',
+    top_n_per_article: 1,
+    unescape: false
+  });
+  const box = modal.root.querySelector('.panel .panel-box');
+  // 预加载数据
+  localSearch.fetchData();
+  function handleInputChange(){
+    const searchText = input.value.trim().toLowerCase();
+    const keywords = searchText.split(/[-\s]+/);
+    const items = localSearch.getResultItems(keywords);
+    if(items.length > 0){
+      const list = items.reduce((t, v) => t + v.item, '<ul>') + '</ul>';
+      box.innerHTML = list;
+    }else{
+      box.innerHTML = '<div class="search-result-icon"><i class="far fa-file fa-3x"></i><p class="search-result-tips">找不到匹配数据！</p></div>'
+    }
+  }
+  input.addEventListener('input', handleInputChange);
 }

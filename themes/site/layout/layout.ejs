@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= config.language %>">
+<html lang="<%= config.language %>" class="has-navbar-fixed-top">
 
 <head>
   <% if(page.title) { %>
@@ -37,9 +37,10 @@
   <!-- footer -->
   <%- fragment_cache('footer', function(){ return partial('partial/footer') }) %>
   <!-- script -->
+  <script src="<%- url_for('/js/index.js') %>"></script>
   <script src="<%- url_for('/js/bulma.js') %>"></script>
   <script src="<%- url_for('/js/wordcloud.js') %>"></script>
-  <script src="<%- url_for('/js/index.js') %>"></script>
+  <script src="<%- url_for('/js/search.js') %>"></script>
 </body>
 
 </html>

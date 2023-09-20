@@ -4,4 +4,6 @@
 
 ```bash
   hexo n [layout] title // 新建文档
+  hexo clean
+  hexo generate
 ```

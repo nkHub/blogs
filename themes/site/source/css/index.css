@@ -20,7 +20,7 @@ html {
   scrollbar-width: 2px;
 }
 
-.logo {
+.pointer {
   cursor: pointer;
 }
 
@@ -382,6 +382,68 @@ a.category-list-item:hover {
 #word-cloud span{
   cursor: pointer;
   user-select: none;
+}
+
+.modal-card-foot{
+  padding: 6px;
+  justify-content: flex-end;
+}
+
+/* 搜索部分 */
+.search-result-box{
+  display: block;
+  height: 460px;
+  overflow-y: scroll;
+}
+
+.search-result-box li{
+  position: relative;
+  padding: 4px;
+}
+
+.search-result-box li::after{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  height: 1px;
+  background-color: #e5e5e5;
+}
+
+.search-result-box li:last-child::after{
+  display: none;
+}
+
+.search-result-box li a{
+  color: #000000;
+  line-height: 1.42;
+}
+
+.search-result-box li a .search-result-title{
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+.search-result-box li a .search-result{
+  font-size: 13px;
+}
+
+.search-result-box li a .search-keyword{
+  background-color: #cccccc;
+}
+
+.search-result-box .search-result-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 460px;
+  font-size: 13px;
+}
+
+.search-result-box .search-result-icon .fa-file{
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {

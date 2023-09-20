@@ -1,8 +1,8 @@
-<nav class="navbar is-dark">
+<nav class="navbar is-dark is-fixed-top">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img class="logo" src="<%- url_for('/images/logo.png') %>" width="112" height="28">
+        <img class="logo pointer" src="<%- url_for('/images/logo.png') %>" width="112" height="28">
       </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar">
         <span aria-hidden="true"></span>
@@ -16,8 +16,45 @@
           <a class="navbar-item" href="<%= site.data.menu[link] %>">
             <%= link %>
           </a>
-        <% } %>
+          <% } %>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div id="header-search-input" class="control has-icons-right pointer">
+          <input readonly class="input is-normal" type="text" placeholder="搜索">
+          <span class="icon is-small is-right">
+            <i class="fas fa-search fa-xs"></i>
+          </span>
+        </div>
       </div>
     </div>
   </div>
 </nav>
+<!-- 搜索框 -->
+<div id="modal-search" class="modal">
+  <div class="modal-background"></div>
+  <button class="modal-close is-large" aria-label="close"></button>
+  <div class="modal-content">
+    <nav class="panel" style="background-color: #fff;">
+      <p class="panel-heading">
+        搜索
+      </p>
+      <div class="panel-block">
+        <p class="control has-icons-left">
+          <input class="input" type="text" placeholder="搜索">
+          <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+        </p>
+      </div>
+      <!-- 搜索内容 -->
+      <div class="panel-block panel-box is-active search-result-box">
+        <div class="search-result-icon">
+          <i class="far fa-file fa-3x" ></i>
+          <p class="search-result-tips">找不到匹配数据！</p>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
