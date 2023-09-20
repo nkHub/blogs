@@ -12,7 +12,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #aaaaaa;
   border-radius: 2px;
 }
 
@@ -396,6 +396,22 @@ a.category-list-item:hover {
   overflow-y: scroll;
 }
 
+/* 滚动条的重置 */
+.search-result-box::-webkit-scrollbar {
+  width: 4px;
+  z-index: 1;
+}
+
+.search-result-box::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 2px;
+}
+
+.search-result-box {
+  scrollbar-width: 2px;
+}
+
+
 .search-result-box li{
   position: relative;
   padding: 4px;
@@ -417,22 +433,24 @@ a.category-list-item:hover {
 
 .search-result-box li a{
   color: #000000;
-  line-height: 1.42;
+  line-height: 1.6;
 }
 
-.search-result-box li a .search-result-title{
-  padding-bottom: 2px;
-  font-size: 14px;
+.search-result-box li a.search-result-title{
+  padding-bottom: 4px;
+  font-size: 16px;
 }
 
 .search-result-box li a .search-result{
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .search-result-box li a .search-keyword{
   padding: 0 3px;
+  display: inline-block;
   color: #ffffff;
   background-color: #999999;
+  border-radius: 2px;
 }
 
 .search-result-box .search-result-icon{
@@ -440,7 +458,7 @@ a.category-list-item:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 460px;
+  height: 440px;
   font-size: 13px;
 }
 
