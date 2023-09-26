@@ -466,6 +466,10 @@ a.category-list-item:hover {
   margin-bottom: 10px;
 }
 
+#modal-search .panel{
+  background-color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .content img {
     max-width: 70%!important;
@@ -494,5 +498,21 @@ a.category-list-item:hover {
   .category-list-count{
     color: #b5b5b5;
   }
-  
+
+  #modal-search .modal-background{
+    background-color: rgba(0, 0, 0, .7);
+  }
+  #modal-search .panel{
+    background-color: rgba(50,50,50, 0.9);
+  }
+  #modal-search .panel-block.is-active{
+    border-left-color: #000000;
+  }
+  .search-result-box li a{
+    color: #eeeeee;
+  }
+
+  .panel-block:not(:last-child), .panel-tabs:not(:last-child){
+    border-bottom: 1px solid #aaaaaa;
+  }
 }
